@@ -3,7 +3,7 @@ import binascii
 from util import hammingDistance
 from os.path import join, dirname, basename
 
-GENERATED_OUTPUT_DIR = "/home/rascheel/git/PUFProject/OutputGenerated/"
+GENERATED_OUTPUT_DIR = "/home/nmont/Documents/PUFphh/git/PUFProject/OutputGenerated/"
 
 def main():
     testHamming("Strat1")

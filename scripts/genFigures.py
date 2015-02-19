@@ -7,13 +7,13 @@ from util import simpleMovingAverage, cumulativeMovingAverage, distBetweenPts, c
 from math import sqrt, atan, sin, cos, fabs
 from pylab import *
 
-CSV_OUTPUT_DIR = "/home/rascheel/git/PUFProject/OutputCSVs/"
-COMBINED_FIGURE_OUTPUT_DIR = "/home/rascheel/git/PUFProject/Figures/Combined"
-INDIVIDUAL_FIGURE_OUTPUT_DIR = "/home/rascheel/git/PUFProject/Figures/Individual"
-OVERLAID_FIGURE_OUTPUT_DIR = "/home/rascheel/git/PUFProject/Figures/Overlaid"
-NORMALIZED_STRAT2_OVERLAID_FIGURE_OUTPUT_DIR = "/home/rascheel/git/PUFProject/Figures/Normalized_Strat2_Overlaid"
-NORMALIZED_STRAT3_OVERLAID_FIGURE_OUTPUT_DIR = "/home/rascheel/git/PUFProject/Figures/Normalized_Strat3_Overlaid"
-NORMALIZED_STRAT4_OVERLAID_FIGURE_OUTPUT_DIR = "/home/rascheel/git/PUFProject/Figures/Normalized_Strat4_Overlaid"
+CSV_OUTPUT_DIR = "/home/nmont/Documents/PUF\ Research/PUFProject/OutputCSVs/"
+COMBINED_FIGURE_OUTPUT_DIR = "/home/nmont/Documents/PUF\ Research/PUFProject/Figures/Combined/"
+INDIVIDUAL_FIGURE_OUTPUT_DIR = "/home/nmont/Documents/PUF\ Research/PUFProject/Figures/Individual/"
+OVERLAID_FIGURE_OUTPUT_DIR = "/home/nmont/Documents/PUF\ Research/PUFProject/Figures/Overlaid/"
+NORMALIZED_STRAT2_OVERLAID_FIGURE_OUTPUT_DIR = "/home/nmont/Documents/PUF Research/PUFProject/Figures/Normalized_Strat2_Overlaid"
+NORMALIZED_STRAT3_OVERLAID_FIGURE_OUTPUT_DIR = "/home/nmont/Documents/PUF Research/PUFProject/Figures/Normalized_Strat3_Overlaid"
+NORMALIZED_STRAT4_OVERLAID_FIGURE_OUTPUT_DIR = "/home/nmont/Documents/PUF Research/PUFProject/Figures/Normalized_Strat4_Overlaid"
 
 def main():
     #genIndividualFigures()

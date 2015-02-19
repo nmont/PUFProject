@@ -3,7 +3,7 @@ import binascii
 from util import hammingDistance
 from os.path import join, dirname, basename
 
-GENERATED_OUTPUT_DIR = "/home/rascheel/git/PUFProject/OutputGenerated/"
+GENERATED_OUTPUT_DIR = "/home/nmont/Documents/PUF\ Research/PUFProject/OutputGenerated/"
 
 def main():
     #testConsistencyHamming("ConsistencyStrat2")
