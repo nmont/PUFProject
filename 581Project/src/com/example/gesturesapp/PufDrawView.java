@@ -116,7 +116,7 @@ public class PufDrawView extends View
         switch( me.getAction() )
         {
             case MotionEvent.ACTION_DOWN:
-                tv.setText( "Touch (x,y) = (" + me.getX() + ", " + me.getY() + ")" );
+                tv.setText( "(x,y) = (" + Math.round(me.getX()) + ", " + Math.round(me.getY()) + ") - Pressure = " + me.getPressure() );
                 response.clear();
                 response.add(new Point(me.getX(), me.getY(), me.getPressure()));
                 break;
@@ -131,7 +131,7 @@ public class PufDrawView extends View
 
                 break;
             case MotionEvent.ACTION_MOVE:
-                tv.setText( "Touch (x,y) = (" + me.getX() + ", " + me.getY() + ")" );
+                tv.setText( "(x,y) = (" + Math.round(me.getX()) + ", " + Math.round(me.getY()) + ") Pressure = " + me.getPressure() );
                 response.add(new Point(me.getX(), me.getY(), me.getPressure()));
                 break;
             default:

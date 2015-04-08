@@ -52,6 +52,7 @@ public class MainActivity extends Activity
         if (prefs.getBoolean("AutoIncSeed", true))
         {
             Editor prefEditor = prefs.edit();
+            if(currSeed >= 5) currSeed = 0;
             prefEditor.putString("CurrSeed", Long.toString(currSeed + 1));
             prefEditor.commit();
             listener.onSharedPreferenceChanged(prefs, "CurrSeed");
@@ -71,7 +72,7 @@ public class MainActivity extends Activity
 
         // Initialize Views
         CurrSeedTv = (TextView) findViewById(R.id.currentSeedTV);
-        CurrSeedTv.setText("Seed: " + Long.toString(currSeed));
+        CurrSeedTv.setText("    Seed: " + Long.toString(currSeed));
 
         tv = (TextView) findViewById(R.id.textview);
 
@@ -269,8 +270,8 @@ public class MainActivity extends Activity
 
     private void sendCSVEmail()
     {
-        String to = "isunexus7@gmail.com";
-        String subject = "PUFTesting";
+        String to = "nmont@iastate.edu";
+        String subject = "PUF Authentication Testing";
         String message = "";
 
         Intent i = new Intent(Intent.ACTION_SEND_MULTIPLE);
