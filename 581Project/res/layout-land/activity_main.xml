@@ -14,9 +14,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
         <TextView
-            android:layout_width="90dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:id = "@+id/textview"
             android:text="No touch detected." />
         <TextView
@@ -24,15 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id = "@+id/currentSeedTV"
-            android:text="Seed: X"
-            android:paddingLeft="10dp"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id = "@+id/totalSeedTV"
-            android:text="Seed: X"
-            android:paddingLeft="10dp"/>
+            android:text="Seed: X" />
     </LinearLayout>
 
     <com.example.gesturesapp.PufDrawView

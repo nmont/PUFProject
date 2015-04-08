@@ -5,26 +5,19 @@
 	    <EditTextPreference
 	        android:title="Tester Name"
 	        android:summary="Name of the person generating the challenges (you)"
- 	        android:defaultValue="Default" 
+ 	        android:defaultValue=""
  	        android:key="TesterName" />
 	    <EditTextPreference
 	        android:title="Device Name"
-	        android:summary="Name of the Nexus device (written on back)"
- 	        android:defaultValue="nexus-default" 
+	        android:summary="Name of the device testing"
+ 	        android:defaultValue=""
  	        android:key="DeviceName" />
 	    <EditTextPreference
-	        android:title="Initial RNG Seed"
-	        android:summary="This is the initial value that the seed is set to"
+	        android:title="Initial Seed"
+	        android:summary="Initial value that the seed is set to (one for most tests)"
  	        android:defaultValue="1" 
  	        android:numeric="integer"
  	        android:key="InitialSeed" />
-	    <EditTextPreference
-	        android:title="Current Seed"
-	        android:summary="This is the initial seed plus number of times a challenge has been generated."
- 	        android:defaultValue="1" 
- 	        android:numeric="integer"
-            android:selectable="false"
- 	        android:key="CurrSeed" />
         <CheckBoxPreference
             android:title="Auto increment seed"
             android:summary="When checked the seed will auto increment after tracing a path."

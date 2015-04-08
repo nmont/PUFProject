@@ -24,10 +24,13 @@ public class MainActivity extends Activity
 
     private TextView tv;
     private TextView CurrSeedTv;
+    private TextView TotalSeedTv;
     private long currSeed;
+    private long seedsCreated;
     private PufDrawView pufDrawView;
     private SharedPreferences prefs;
     private Random rng;
+
 
     OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener()
     {
@@ -39,6 +42,7 @@ public class MainActivity extends Activity
             {
                 currSeed = Long.parseLong(prefs.getString("CurrSeed", "1"));
                 CurrSeedTv.setText("Seed: " + Long.toString(currSeed));
+                TotalSeedTv.setText("Total: " + Long.toString(seedsCreated));
                 rng.setSeed(currSeed);
                 ArrayList<Point> challenge = generateChallenge();
                 pufDrawView.giveChallenge(challenge.toArray(new Point[challenge
@@ -52,7 +56,11 @@ public class MainActivity extends Activity
         if (prefs.getBoolean("AutoIncSeed", true))
         {
             Editor prefEditor = prefs.edit();
-            if(currSeed >= 5) currSeed = 0;
+            if(currSeed >= 5)
+            {
+                currSeed = 0;
+                seedsCreated++;
+            }
             prefEditor.putString("CurrSeed", Long.toString(currSeed + 1));
             prefEditor.commit();
             listener.onSharedPreferenceChanged(prefs, "CurrSeed");
@@ -72,7 +80,10 @@ public class MainActivity extends Activity
 
         // Initialize Views
         CurrSeedTv = (TextView) findViewById(R.id.currentSeedTV);
-        CurrSeedTv.setText("    Seed: " + Long.toString(currSeed));
+        TotalSeedTv = (TextView) findViewById(R.id.totalSeedTV);
+
+        CurrSeedTv.setText("Seed: " + Long.toString(currSeed));
+        TotalSeedTv.setText("Total: " + Long.toString(seedsCreated));
 
         tv = (TextView) findViewById(R.id.textview);
 
@@ -114,7 +125,7 @@ public class MainActivity extends Activity
         challenge.add(randPntInBnds());
         int rejectionPoint = 50;
 
-        // ensure that none of the points are too close to eachother
+        // ensure that none of the points are too close to each other
         boolean badPath = false;
         for (int i = 0; i < challenge.size() && !badPath; i++)
         {
@@ -305,7 +316,8 @@ public class MainActivity extends Activity
         }
         i.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
         startActivity(Intent.createChooser(i, "Send mail..."));
-
+        seedsCreated = 0;
+        TotalSeedTv.setText("Total: " + Long.toString(seedsCreated));
     }
 
     private List<File> getListFiles(File parentDir)
