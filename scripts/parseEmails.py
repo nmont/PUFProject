@@ -1,16 +1,17 @@
 import email, getpass, imaplib, os
 
-detach_dir = '/home/rascheel/git/PUFProject/OutputCSVs/' # directory where to save attachments (default: current)
-user = "isunexus7@gmail.com"
+detach_dir = '/home/nmont/Documents/PUFProject/OutputCSVs/' # directory where to save attachments (default: current)
+user = "nmont16@gmail.com"
 pwd = getpass.getpass("Enter email password for " + user + ":")
 
 # connecting to the gmail imap server
 m = imaplib.IMAP4_SSL("imap.gmail.com")
 m.login(user,pwd)
+print m.list()
 m.select("[Gmail]/All Mail") # here you a can choose a mail box like INBOX instead
 # use m.list() to get all the mailboxes
 
-resp, items = m.search(None, '(FROM "isunexus7@gmail.com" UNSEEN)') # you could filter using the IMAP rules here (check http://www.example-code.com/csharp/imap-search-critera.asp)
+resp, items = m.search(None, '(SUBJECT \"PUF Authentication\" UNSEEN)') # you could filter using the IMAP rules here (check http://www.example-code.com/csharp/imap-search-critera.asp)
 items = items[0].split() # getting the mails id
 
 for emailid in items:
